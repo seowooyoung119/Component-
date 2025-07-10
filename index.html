@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Unreal Engine Component Inheritance Tree</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      padding: 40px;
+      background-color: #f9f9f9;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    .tree {
+      margin-top: 40px;
+      line-height: 1.6;
+      font-size: 16px;
+      color: #222;
+    }
+    ul {
+      list-style-type: none;
+      position: relative;
+      padding-left: 20px;
+    }
+    ul::before {
+      content: '';
+      border-left: 2px solid #ccc;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 10px;
+    }
+    li {
+      margin: 0;
+      padding: 4px 0 4px 20px;
+      position: relative;
+    }
+    li::before {
+      content: '';
+      position: absolute;
+      top: 12px;
+      left: 0;
+      width: 20px;
+      height: 0;
+      border-top: 2px solid #ccc;
+    }
+    code {
+      background: #eee;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔧 Unreal Engine Component 상속 구조</h1>
+  <div class="tree">
+    <ul>
+      <li><code>UObject</code>
+        <ul>
+          <li><code>UActorComponent</code>
+            <ul>
+              <li><code>USceneComponent</code>
+                <ul>
+                  <li><code>UPrimitiveComponent</code>
+                    <ul>
+                      <li><code>UMeshComponent</code>
+                        <ul>
+                          <li><code>USkeletalMeshComponent</code></li>
+                          <li><code>UStaticMeshComponent</code></li>
+                        </ul>
+                      </li>
+                      <li><code>UShapeComponent</code>
+                        <ul>
+                          <li><code>UBoxComponent</code></li>
+                          <li><code>USphereComponent</code></li>
+                          <li><code>UCapsuleComponent</code></li>
+                        </ul>
+                      </li>
+                      <li><code>UBillboardComponent</code></li>
+                      <li><code>UDecalComponent</code></li>
+                    </ul>
+                  </li>
+                  <li><code>UArrowComponent</code></li>
+                  <li><code>USpringArmComponent</code></li>
+                  <li><code>UCameraComponent</code></li>
+                  <li><code>UChildActorComponent</code></li>
+                  <li><code>UTextRenderComponent</code></li>
+                  <li><code>ULightComponent</code>
+                    <ul>
+                      <li><code>UDirectionalLightComponent</code></li>
+                      <li><code>UPointLightComponent</code></li>
+                      <li><code>USpotLightComponent</code></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li><code>UMovementComponent</code>
+                <ul>
+                  <li><code>UPawnMovementComponent</code>
+                    <ul>
+                      <li><code>UFloatingPawnMovement</code></li>
+                      <li><code>UCharacterMovementComponent</code></li>
+                    </ul>
+                  </li>
+                  <li><code>UProjectileMovementComponent</code></li>
+                  <li><code>UInterpToMovementComponent</code></li>
+                </ul>
+              </li>
+              <li><code>UAudioComponent</code></li>
+              <li><code>UInputComponent</code></li>
+              <li><code>UCameraShakeBase</code></li>
+              <li><code>UNiagaraComponent</code></li>
+              <li><code>UDecalComponent</code></li>
+              <li><code>UPhysicsConstraintComponent</code></li>
+              <li><code>UNavMovementComponent</code></li>
+              <li><code>UNavigationInvokerComponent</code></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</body>
+</html>
