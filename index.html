@@ -2,121 +2,153 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>Unreal Engine Component Inheritance Tree</title>
+  <title>Unreal Engine Component Tree</title>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #f2f7ff, #e8f0ff);
+      color: #333;
       padding: 40px;
-      background-color: #f9f9f9;
     }
     h1 {
       text-align: center;
-      color: #333;
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      color: #0057b7;
     }
-    .tree {
-      margin-top: 40px;
-      line-height: 1.6;
-      font-size: 16px;
-      color: #222;
+    .tree ul {
+      padding-top: 20px; position: relative;
+      transition: all 0.5s;
     }
-    ul {
+    .tree li {
+      float: left; text-align: center;
       list-style-type: none;
       position: relative;
-      padding-left: 20px;
+      padding: 20px 5px 0 5px;
+      transition: all 0.5s;
     }
-    ul::before {
+    .tree li::before, .tree li::after {
       content: '';
-      border-left: 2px solid #ccc;
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 10px;
-    }
-    li {
-      margin: 0;
-      padding: 4px 0 4px 20px;
-      position: relative;
-    }
-    li::before {
-      content: '';
-      position: absolute;
-      top: 12px;
-      left: 0;
-      width: 20px;
-      height: 0;
+      position: absolute; top: 0; right: 50%;
       border-top: 2px solid #ccc;
+      width: 50%; height: 20px;
     }
-    code {
-      background: #eee;
-      padding: 2px 6px;
-      border-radius: 4px;
-      font-size: 14px;
+    .tree li::after {
+      right: auto; left: 50%; border-left: 2px solid #ccc;
     }
+    .tree li:only-child::before, .tree li:only-child::after {
+      display: none;
+    }
+    .tree li:only-child {
+      padding-top: 0;
+    }
+    .tree li:first-child::before, .tree li:last-child::after {
+      border: 0 none;
+    }
+    .tree li:last-child::before {
+      border-right: 2px solid #ccc;
+      border-radius: 0 5px 0 0;
+    }
+    .tree li:first-child::after {
+      border-radius: 5px 0 0 0;
+    }
+    .tree .node {
+      display: inline-block;
+      border: 2px solid #0057b7;
+      padding: 10px 15px;
+      border-radius: 8px;
+      background: white;
+      color: #0057b7;
+      font-weight: bold;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: all 0.3s;
+    }
+    .tree .node:hover {
+      background: #0057b7;
+      color: white;
+      cursor: pointer;
+    }
+    .tree ul ul::before {
+      content: '';
+      position: absolute; top: 0; left: 50%;
+      border-left: 2px solid #ccc;
+      width: 0; height: 20px;
+    }
+    .tree ul { display: flex; justify-content: center; }
   </style>
 </head>
 <body>
-  <h1>🔧 Unreal Engine Component 상속 구조</h1>
+  <h1>🔧 Unreal Engine Component Inheritance Tree</h1>
   <div class="tree">
     <ul>
-      <li><code>UObject</code>
+      <li>
+        <div class="node">UObject</div>
         <ul>
-          <li><code>UActorComponent</code>
+          <li>
+            <div class="node">UActorComponent</div>
             <ul>
-              <li><code>USceneComponent</code>
+              <li>
+                <div class="node">USceneComponent</div>
                 <ul>
-                  <li><code>UPrimitiveComponent</code>
+                  <li>
+                    <div class="node">UPrimitiveComponent</div>
                     <ul>
-                      <li><code>UMeshComponent</code>
+                      <li>
+                        <div class="node">UMeshComponent</div>
                         <ul>
-                          <li><code>USkeletalMeshComponent</code></li>
-                          <li><code>UStaticMeshComponent</code></li>
+                          <li><div class="node">USkeletalMeshComponent</div></li>
+                          <li><div class="node">UStaticMeshComponent</div></li>
                         </ul>
                       </li>
-                      <li><code>UShapeComponent</code>
+                      <li>
+                        <div class="node">UShapeComponent</div>
                         <ul>
-                          <li><code>UBoxComponent</code></li>
-                          <li><code>USphereComponent</code></li>
-                          <li><code>UCapsuleComponent</code></li>
+                          <li><div class="node">UBoxComponent</div></li>
+                          <li><div class="node">USphereComponent</div></li>
+                          <li><div class="node">UCapsuleComponent</div></li>
                         </ul>
                       </li>
-                      <li><code>UBillboardComponent</code></li>
-                      <li><code>UDecalComponent</code></li>
+                      <li><div class="node">UBillboardComponent</div></li>
+                      <li><div class="node">UDecalComponent</div></li>
                     </ul>
                   </li>
-                  <li><code>UArrowComponent</code></li>
-                  <li><code>USpringArmComponent</code></li>
-                  <li><code>UCameraComponent</code></li>
-                  <li><code>UChildActorComponent</code></li>
-                  <li><code>UTextRenderComponent</code></li>
-                  <li><code>ULightComponent</code>
+                  <li><div class="node">UArrowComponent</div></li>
+                  <li><div class="node">USpringArmComponent</div></li>
+                  <li><div class="node">UCameraComponent</div></li>
+                  <li><div class="node">UChildActorComponent</div></li>
+                  <li><div class="node">UTextRenderComponent</div></li>
+                  <li>
+                    <div class="node">ULightComponent</div>
                     <ul>
-                      <li><code>UDirectionalLightComponent</code></li>
-                      <li><code>UPointLightComponent</code></li>
-                      <li><code>USpotLightComponent</code></li>
+                      <li><div class="node">UDirectionalLightComponent</div></li>
+                      <li><div class="node">UPointLightComponent</div></li>
+                      <li><div class="node">USpotLightComponent</div></li>
                     </ul>
                   </li>
                 </ul>
               </li>
-              <li><code>UMovementComponent</code>
+              <li>
+                <div class="node">UMovementComponent</div>
                 <ul>
-                  <li><code>UPawnMovementComponent</code>
+                  <li>
+                    <div class="node">UPawnMovementComponent</div>
                     <ul>
-                      <li><code>UFloatingPawnMovement</code></li>
-                      <li><code>UCharacterMovementComponent</code></li>
+                      <li><div class="node">UFloatingPawnMovement</div></li>
+                      <li><div class="node">UCharacterMovementComponent</div></li>
                     </ul>
                   </li>
-                  <li><code>UProjectileMovementComponent</code></li>
-                  <li><code>UInterpToMovementComponent</code></li>
+                  <li><div class="node">UProjectileMovementComponent</div></li>
+                  <li><div class="node">UInterpToMovementComponent</div></li>
                 </ul>
               </li>
-              <li><code>UAudioComponent</code></li>
-              <li><code>UInputComponent</code></li>
-              <li><code>UCameraShakeBase</code></li>
-              <li><code>UNiagaraComponent</code></li>
-              <li><code>UDecalComponent</code></li>
-              <li><code>UPhysicsConstraintComponent</code></li>
-              <li><code>UNavMovementComponent</code></li>
-              <li><code>UNavigationInvokerComponent</code></li>
+              <li><div class="node">UAudioComponent</div></li>
+              <li><div class="node">UInputComponent</div></li>
+              <li><div class="node">UCameraShakeBase</div></li>
+              <li><div class="node">UNiagaraComponent</div></li>
+              <li><div class="node">UDecalComponent</div></li>
+              <li><div class="node">UPhysicsConstraintComponent</div></li>
+              <li><div class="node">UNavMovementComponent</div></li>
+              <li><div class="node">UNavigationInvokerComponent</div></li>
             </ul>
           </li>
         </ul>
