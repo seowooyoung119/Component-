@@ -6,63 +6,65 @@
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to right, #f2f7ff, #e8f0ff);
-      color: #333;
+      background: #f0f4ff;
+      color: #222;
       padding: 30px;
       display: flex;
       justify-content: center;
     }
     h1 {
       text-align: center;
-      color: #0057b7;
-      margin-bottom: 20px;
+      color: #003366;
+      margin-bottom: 30px;
       width: 100%;
-      max-width: 800px;
+      max-width: 700px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
     }
     .tree {
-      max-width: 800px;
+      max-width: 700px;
       width: 100%;
     }
-    ul, li {
+    ul {
       list-style: none;
       margin: 0;
-      padding-left: 1.25rem;
-      position: relative;
-    }
-    ul {
-      border-left: 2px solid #ccc;
-      margin-left: 10px;
+      padding-left: 20px;
+      border-left: 2px solid #6495ED;
     }
     li {
-      padding: 10px 0 10px 1rem;
-      color: #0057b7;
-      font-weight: bold;
-      cursor: default;
       position: relative;
+      margin: 10px 0;
+      padding-left: 15px;
+      color: #1E40AF;
+      font-weight: 600;
+      cursor: default;
+      transition: color 0.3s ease;
     }
     li::before {
       content: '';
       position: absolute;
-      top: 20px;
-      left: -18px;
-      width: 15px;
+      left: -10px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 12px;
       height: 2px;
-      background: #ccc;
+      background-color: #6495ED;
+      border-radius: 2px;
     }
     li:last-child::before {
-      background: transparent;
+      background-color: transparent;
     }
     li:hover {
-      color: #003d80;
+      color: #1E3A8A;
     }
     li:hover::before {
-      background: #0057b7;
+      background-color: #1E40AF;
     }
   </style>
 </head>
 <body>
   <div>
-    <h1>🔧 Unreal Engine Component 상속 구조 (수직 트리)</h1>
+    <h1>🔧 Unreal Engine Component 상속 구조 (세로 트리)</h1>
     <div class="tree">
       <ul>
         <li>UObject
